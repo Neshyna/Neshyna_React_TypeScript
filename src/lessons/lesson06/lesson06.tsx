@@ -92,6 +92,7 @@ function lesson06(){
    const fruits: [string, number] = ['apple', 4];
    fruits.push('cherry');
    console.log(fruits);
+   
    // 13. Union типы, позволяет указывать несколько типов - типы указываются через знак |
    let color: string | number = 'red';
    color = 2341;
