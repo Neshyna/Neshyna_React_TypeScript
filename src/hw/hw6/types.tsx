@@ -20,11 +20,9 @@ let names = ["Alice", "Bob", "Charlie"];
 let names: string[] = ["Alice", "Bob", "Charlie"];
 
 let mixed = [1, "Alice", 2, "Bob"];
-let mixed: [number, string] = [1, "Alice", 2, "Bob"];
 let mixed: (number|string)[] = [1, "Alice", 2, "Bob"];
 
 let colors = [123, "red", true, "blue"];
-let colors: [number, string, boolean,string] = [123, "red", true, "blue"];
 let colors: (number | string | boolean)[] = [123, "red", true, "blue"];
 
 
