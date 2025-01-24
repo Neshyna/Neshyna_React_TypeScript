@@ -21,6 +21,7 @@ let names: string[] = ["Alice", "Bob", "Charlie"];
 
 let mixed = [1, "Alice", 2, "Bob"];
 let mixed: [number, string] = [1, "Alice", 2, "Bob"];
+let mixed: (number|string)[] = [1, "Alice", 2, "Bob"];
 
 let colors = [123, "red", true, "blue"];
 let colors: [number, string, boolean,string] = [123, "red", true, "blue"];
@@ -39,6 +40,6 @@ const add = (a:number,b:number): number {
 const logMessage = (message) => {
   console.log(message);
 };
-const logMessage = (message): void => {
+const logMessage = (message:string): void => {
   console.log(message);
 }
