@@ -1,0 +1,13 @@
+.product-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 100px;
+  min-height: 100px;
+  background-color: rgb(210, 218, 145);
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 20px;
+}
