@@ -8,11 +8,11 @@ function Feedback() {
   const [numberOfDislikes, setNumberOfDislikes] = useState<number>(0);
 
   const clickLike = (): void => {
-    setNumberOfLikes((prevState) => prevState + 1);
+    setNumberOfLikes((prevState: number) => prevState + 1);
   };
 
   const clickDislike = (): void => {
-    setNumberOfDislikes((prevState) => prevState + 1);
+    setNumberOfDislikes((prevState: number) => prevState + 1);
   };
 
   const resetResults = (): void => {
