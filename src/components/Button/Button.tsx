@@ -1,14 +1,7 @@
 import "./styles.css";
 import { ButtonProps } from "./types";
 
-// interface ButtonProps {
-//   name?: string,
-//   type: 'submit' | 'button' | 'reset',
-//   onClick: () => void
-// }
-
 function Button({ name = "SEND", type, onClick }: ButtonProps) {
-
   return (
     <button className="main-button" type={type} onClick={onClick}>
       {name}
@@ -16,4 +9,3 @@ function Button({ name = "SEND", type, onClick }: ButtonProps) {
   );
 }
 export default Button;
-

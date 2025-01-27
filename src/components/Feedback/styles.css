@@ -1,0 +1,28 @@
+.feedback-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 300px;
+  padding: 20px;
+  background-color: rgb(184, 222, 235);
+  border: 2px solid rgb(70, 67, 234);
+  border-radius: 4px;
+}
+
+.button-wrapper {
+  width: 100px;
+}
+
+.number-likes, .number-dislike {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.like-wrapper, .dislike-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
