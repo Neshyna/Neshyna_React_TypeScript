@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 export interface AnimalProps {
   animalName: string;
   animalSpecies: string;
-  animalImg: any | string;
-  children?: any;
+  animalImg: string;
+  children?: ReactNode;
 }
