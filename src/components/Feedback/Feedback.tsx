@@ -10,6 +10,7 @@ import {
   NumberDislikes,
   LikeWrapper,
   DislikeWrapper,
+  ResetWrapper,
 } from "./styles";
 
 function Feedback() {
@@ -43,11 +44,11 @@ function Feedback() {
         </ButtonWrapper>
         <NumberDislikes>{numberOfDislikes}</NumberDislikes>
       </DislikeWrapper>
-      <div className="reset-wrapper">
-        <div className="button-wrapper">
+      <ResetWrapper>
+        <ButtonWrapper>
           <Button name="Reset Results" type="button" onClick={resetResults} />
-        </div>
-      </div>
+        </ButtonWrapper>
+      </ResetWrapper>
     </FeedbackWrapper>
   );
 }

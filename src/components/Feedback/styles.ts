@@ -45,3 +45,5 @@ export const LikeWrapper = styled.div`
 export const DislikeWrapper = styled.div`
   ${GeneralWrapper}
 `;
+
+export const ResetWrapper = styled.div``;
