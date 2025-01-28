@@ -1,23 +1,20 @@
-import "./styles.css";
-import { InputProps } from "./types";
-import { InputContainer, InputField } from "./styles";
+import { InputContainer, InputElement, Label } from "./styles";
+import { InputProps } from './types'
 
-function Input({
-  name,
-  type,
-  placeholder,
-  label,
-  id,
-  value,
-  onChange,
-}: InputProps) {
+function Input({ name, type = 'text', placeholder, label, id, value, onChange }: InputProps) {
   return (
     <InputContainer>
-      <label htmlFor={id}>{label}</label>
-      <InputField id={id} name={name} type={type} placeholder={placeholder}  value={value}
-        onChange={onChange} />
+      {label && <Label htmlFor={id}>{label}</Label>}
+      <InputElement
+        name={name}
+        id={id}
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      />
     </InputContainer>
-
   );
 }
+
 export default Input;
