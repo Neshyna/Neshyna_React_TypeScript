@@ -1,5 +1,3 @@
-
-
 import styled from "@emotion/styled";
 
 interface MainButtonStyledProps {
@@ -7,7 +5,6 @@ interface MainButtonStyledProps {
 }
 
 export const MainButton = styled.button<MainButtonStyledProps>`
-
   width: 100%;
   min-height: 70px;
   outline: none;
