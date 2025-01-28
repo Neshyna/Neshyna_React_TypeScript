@@ -7,7 +7,10 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson08 from "./lessons/Lesson08/Lesson08";
 import Lesson09 from "./lessons/Lesson09/Lesson09";
 
+
 // hw
+//import HW8 from "./hw/hw8/hw8";
+
 // consult
 
 function App() {
@@ -18,9 +21,11 @@ function App() {
       {/* Topic: TypeScript - Object types, enum */}
       {/* <Lesson07 /> */}
       {/* Topic: Styling components */}
-      {/* <Lesson08 /> */}
+      {/* <Lesson08 /> 
+      <HW8/>*/}
       {/* Topic: Control components, useEffect */}
       <Lesson09 />
+
     </div>
   );
 }

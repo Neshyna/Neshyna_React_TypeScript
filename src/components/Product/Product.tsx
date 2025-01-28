@@ -1,12 +1,13 @@
 import "./styles.css";
 import { ProductProps } from "./types";
+import { ProductWrapper } from "./styles";
 
 function showProduct({ productName, productPrice }: ProductProps) {
   return (
-    <div className="product-wrapper">
+    <ProductWrapper>
       <div>{productName}</div>
       <div>{productPrice}</div>
-    </div>
+    </ProductWrapper>
   );
 }
 

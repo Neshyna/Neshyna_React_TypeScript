@@ -1,4 +1,6 @@
-.product-wrapper {
+import styled from "@emotion/styled";
+
+export const ProductWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,4 +12,4 @@
   border-radius: 4px;
   font-size: 20px;
   padding: 20px;
-}
+`;

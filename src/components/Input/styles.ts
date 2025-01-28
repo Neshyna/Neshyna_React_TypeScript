@@ -1,24 +1,3 @@
-/* input {
-  width: 470px;
-  height: 50px;
-  gap: 3px;
-  border: solid 1px;
-  border-radius: 4px;
-  font-family: Lato;
-  font-size: 16px;
-  color: gray;
-  margin-top: 5px;
-  padding: 5px;
-}
-
-.input-container {
-  width: 470px;
-  height: 78px;
-  gap: 4px;
-  font-family: Lato;
-  font-size: 16px;
-} */
-
 
 import styled from "@emotion/styled";
 export const InputContainer = styled.div`
@@ -43,3 +22,4 @@ export const InputElement = styled.input`
   color: #a19f9f;
 }
 `
+

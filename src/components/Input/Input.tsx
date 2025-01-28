@@ -1,5 +1,6 @@
 import "./styles.css";
 import { InputProps } from "./types";
+import { InputContainer, InputField } from "./styles";
 
 function Input({
   name,
@@ -11,17 +12,12 @@ function Input({
   onChange,
 }: InputProps) {
   return (
-    <div className="input-container">
+    <InputContainer>
       <label htmlFor={id}>{label}</label>
-      <input
-        id={id}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
-    </div>
+      <InputField id={id} name={name} type={type} placeholder={placeholder}  value={value}
+        onChange={onChange} />
+    </InputContainer>
+
   );
 }
 export default Input;
