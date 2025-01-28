@@ -3,6 +3,15 @@ import Button from "../Button/Button";
 
 import { useState } from "react";
 
+import {
+  FeedbackWrapper,
+  ButtonWrapper,
+  NumberLikes,
+  NumberDislikes,
+  LikeWrapper,
+  DislikeWrapper,
+} from "./styles";
+
 function Feedback() {
   const [numberOfLikes, setNumberOfLikes] = useState<number>(0);
   const [numberOfDislikes, setNumberOfDislikes] = useState<number>(0);
@@ -21,25 +30,25 @@ function Feedback() {
   };
 
   return (
-    <div className="feedback-wrapper">
-      <div className="like-wrapper">
-        <div className="number-likes">{numberOfLikes}</div>
-        <div className="button-wrapper">
+    <FeedbackWrapper>
+      <LikeWrapper>
+        <NumberLikes>{numberOfLikes}</NumberLikes>
+        <ButtonWrapper>
           <Button name="Like" type="button" onClick={clickLike} />
-        </div>
-      </div>
-      <div className="dislike-wrapper">
-        <div className="button-wrapper">
+        </ButtonWrapper>
+      </LikeWrapper>
+      <DislikeWrapper>
+        <ButtonWrapper>
           <Button name="Dislike" type="button" onClick={clickDislike} />
-        </div>
-        <div className="number-dislike">{numberOfDislikes}</div>
-      </div>
+        </ButtonWrapper>
+        <NumberDislikes>{numberOfDislikes}</NumberDislikes>
+      </DislikeWrapper>
       <div className="reset-wrapper">
         <div className="button-wrapper">
           <Button name="Reset Results" type="button" onClick={resetResults} />
         </div>
       </div>
-    </div>
+    </FeedbackWrapper>
   );
 }
 export default Feedback;

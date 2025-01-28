@@ -1,12 +1,13 @@
 import "./styles.css";
 import { InputProps } from "./types";
+import { InputContainer, InputField } from "./styles";
 
 function Input({ name, type, placeholder, label, id }: InputProps) {
   return (
-    <div className="input-container">
+    <InputContainer>
       <label htmlFor={id}>{label}</label>
-      <input id={id} name={name} type={type} placeholder={placeholder} />
-    </div>
+      <InputField id={id} name={name} type={type} placeholder={placeholder} />
+    </InputContainer>
   );
 }
 export default Input;

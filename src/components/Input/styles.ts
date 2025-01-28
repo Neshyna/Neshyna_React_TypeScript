@@ -1,4 +1,6 @@
-input {
+import styled from "@emotion/styled";
+
+export const InputField = styled.input`
   width: 470px;
   height: 50px;
   gap: 3px;
@@ -9,12 +11,12 @@ input {
   color: gray;
   margin-top: 5px;
   padding: 5px;
-}
+`;
 
-.input-container {
+export const InputContainer = styled.div`
   width: 470px;
   height: 78px;
   gap: 4px;
   font-family: Lato;
   font-size: 16px;
-}
+`;
