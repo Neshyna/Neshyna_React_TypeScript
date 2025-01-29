@@ -1,72 +1,66 @@
-import Input from "../../components/Input/Input";
-import Button from "../../components/Button/Button";
+import { ChangeEvent, useState } from "react";
 
-import { useState, ChangeEvent } from "react";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
 import {
-  InputsContainer,
-  HW9Wrapper,
-  ResultContainer,
-  AgeBlock,
-  NameBlock,
+  FormWrapper,
+  Homework09Wrapper,
+  ResultBlock,
+  ResultWrapper
 } from "./styles";
 
-function HW9() {
-  const [userNameValue, setUserNameValue] = useState<string>("");
-  const [ageValue, setAgeValue] = useState<string>("");
-  const [savedData, setSavedDataToBlocks] = useState<{
-    userNameValue: string;
-    ageValue: string;
-  }>();
+function Homework09() {
+  const [firstNote, setFirstNote] = useState<string>('')
+  const [secondNote, setSecondNote] = useState<string>('')
+  const [isShowResult, setIsShowResult] = useState<boolean>(false)
+  //добавляем два дополнительных состояния для хранения значений, которые должны отображаться 
+  // в момент появления блока
+  const [firstResult, setFirstResult] = useState<string>('')
+  const [secondResult, setSecondResult] = useState<string>('')
 
+  const firstNoteOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setFirstNote(event.target.value)
+  }
 
-  const onChangeName = (event: ChangeEvent<HTMLInputElement>) => {
-    setUserNameValue(event.target.value);
-  };
+  const secondNoteOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSecondNote(event.target.value)
+  }
 
-  const onChangeAge = (event: ChangeEvent<HTMLInputElement>) => {
-    setAgeValue(event.target.value);
-  };
+  const showResult = () => {
+    //в момент нажатия на кнопку, для отображения результатов, мы забираем значения из input-ов
+    //и сохраняем их в firstResult и secondResult
+    setFirstResult(firstNote)
+    setSecondResult(secondNote)
 
-  const submitData = () => {
-    if (ageValue === "" || userNameValue === "") {
-      alert("Fields are empty.");
-    } else {
-      setSavedDataToBlocks({ userNameValue, ageValue });
-    }
-  };
-  console.log(savedData);
-  
+    // setIsShowResult(true)
+    setIsShowResult(!isShowResult)
+  }
 
   return (
-    <HW9Wrapper>
-      <InputsContainer>
+    <Homework09Wrapper>
+      <FormWrapper>
         <Input
-          name="user_name"
-          label="User name"
-          id="name_id"
-          placeholder="Enter your name"
-          value={userNameValue}
-          onChange={onChangeName}
+          name='first-note'
+          placeholder="Enter first note"
+          value={firstNote}
+          onChange={firstNoteOnChange}
         />
         <Input
-          name="age"
-          label="Age"
-          id="age_id"
-          placeholder="Enter your age"
-          value={ageValue}
-          onChange={onChangeAge}
+          name='second-note'
+          placeholder="Enter second note"
+          value={secondNote}
+          onChange={secondNoteOnChange}
         />
-        <Button name="Submit Data" type="button" onClick={submitData}></Button>
-      </InputsContainer>
-      
-      {savedData && (
-      <ResultContainer>
-        <NameBlock>{savedData.userNameValue}</NameBlock>
-        <AgeBlock>{savedData.ageValue}</AgeBlock>
-      </ResultContainer>
-       )}
-    </HW9Wrapper>
-  );
+        <Button name='SHOW/HIDE' onClick={showResult} disabled={!firstNote.trim() && !secondNote.trim()} />
+      </FormWrapper>
+      {isShowResult && <ResultWrapper>
+        {/* <ResultBlock>{firstNote}</ResultBlock>
+        <ResultBlock>{secondNote}</ResultBlock> */}
+        {firstResult && <ResultBlock>{firstResult}</ResultBlock>}
+        {secondResult && <ResultBlock>{secondResult}</ResultBlock>}
+      </ResultWrapper>}
+    </Homework09Wrapper>
+  )
 }
 
-export default HW9;
+export default Homework09
