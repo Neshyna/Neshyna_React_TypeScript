@@ -22,12 +22,17 @@ import Spinner from "../../components/Spinner/Spinner";
 
 function HW10() {
   const [inputData, setInputData] = useState<string>("");
+  const [inputData2, setInputData2] = useState<string>("");
   const [responseData, setResponseData] = useState<string>("");
   const [error, setError] = useState<string | undefined>(undefined);
   const [isSpinner, setIsSpinner] = useState<boolean>(false);
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputData(event.target.value);
+  };
+
+  const onChange2Input = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputData2(event.target.value);
   };
 
   const fetchData = async () => {
@@ -47,14 +52,16 @@ function HW10() {
   };
 
   useEffect(() => {
-    fetchData();
+    if (inputData) {
+      fetchData();
+    }
   }, [inputData]);
 
   return (
     <HW10Container>
       <InputContainer>
         <Input name="inputOne" value={inputData} onChange={onChange} />
-        <Input name="inputTwo" />
+        <Input name="inputTwo" value={inputData2} onChange={onChange2Input} />
       </InputContainer>
       {responseData && <Response src={responseData}></Response>}
       {isSpinner && <Spinner />}
