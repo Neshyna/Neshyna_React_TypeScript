@@ -17,12 +17,12 @@
 
 // Дополнительная задача (только по желанию)*:
 
-// К каждому факту о котах добавить кнопку DELETE или X, 
+// К каждому факту о котах добавить кнопку DELETE или X,
 // при нажатии на которую , соответствующий факт о котах должен быть удалён
 
 import { ChangeEvent, useEffect, useState } from "react";
 import axios from "axios";
-import {v4 } from 'uuid';
+import { v4 } from "uuid";
 
 import Button from "../../components/Button/Button";
 import Spinner from "../../components/Spinner/Spinner";
@@ -34,32 +34,29 @@ import {
   ButtonWrapper,
 } from "./styles";
 
-
 function Lesson11() {
   const [isSpinner, setIsSpinner] = useState<boolean>(false);
   const [error, setError] = useState<undefined | string>(undefined);
-  const [facts, setFacts] = useState<string[]>([]);//I use array to keep facts
-  const [isInfoContainer, setIsInfoContainer] = useState<boolean>(true);
-
-  // const clickGetInfo = () => {
-  //   setFact(fact);
-  // };
+  const [facts, setFacts] = useState<string[]>([]); //I use array to keep facts
+  const [isDeleteButton, setIsDeleteButton] = useState<boolean>(true);
 
   const clickDeleteAll = () => {
-    setFacts([]); 
-    setIsInfoContainer(false);
+    setFacts([]);
+    setIsDeleteButton(false);
   };
 
   const fetchData = async () => {
     const API_URL: string = "https://catfact.ninja/fact";
     setError(undefined);
-    
+
     try {
       setIsSpinner(true);
       const response = await axios.get(API_URL);
-      setFacts((prevValue) => [...prevValue, response.data.fact]);//this method gleb has described at consultation
+      setIsDeleteButton(true);
+      setFacts((prevValue) => [...prevValue, response.data.fact]); //described at consultation
     } catch (error: any) {
       setError(error.message);
+      setFacts([]);
     } finally {
       setIsSpinner(false);
     }
@@ -78,17 +75,19 @@ function Lesson11() {
         {facts.map((fact) => (
           <FactBlock key={v4()}>{fact}</FactBlock>
         ))}
-        </InfoContainer>
+        {isSpinner && <Spinner></Spinner>}
+        {error && <Error>{error}</Error>}
+      </InfoContainer>
       <ButtonWrapper>
-        <Button
-          name="Delete All"
-          type="button"
-          onClick={clickDeleteAll}
-          disabled={!isInfoContainer}
-        ></Button>
+        {isDeleteButton && (
+          <Button
+            name="Delete All"
+            type="button"
+            onClick={clickDeleteAll}
+            // disabled={facts.length === 0}
+          ></Button>
+        )}
       </ButtonWrapper>
-      {isSpinner && <Spinner></Spinner>}
-      {error && <Error>{error}</Error>}
     </PageWrapper>
   );
 }
