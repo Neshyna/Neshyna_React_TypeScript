@@ -30,7 +30,7 @@ function HW10() {
     setInputData(event.target.value);
   };
 
-  const axiosData = async () => {
+  const fetchData = async () => {
     const API_URL: string = "https://dog.ceo/api/breeds/image/random";
     setResponseData(" ");
     setError(undefined);
@@ -47,7 +47,7 @@ function HW10() {
   };
 
   useEffect(() => {
-    axiosData();
+    fetchData();
   }, [inputData]);
 
   return (
