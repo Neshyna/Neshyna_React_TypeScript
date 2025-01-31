@@ -4,14 +4,16 @@ import GlobalStyles from "./styles/GlobalStyles";
 // lessons
 // import Lesson06 from './lessons/lesson06/lesson06';
 // import Lesson07 from './lessons/lesson07/lesson07';
-// import Lesson08 from "./lessons/Lesson08/Lesson08";
-// import Lesson09 from "./lessons/Lesson09/Lesson09";
-// import Lesson10 from "./lessons/Lesson10/Lesson10";
+// import Lesson08 from "./lessons/lesson08/Lesson08";
+// import Lesson09 from "./lessons/lesson09/Lesson09";
+// import Lesson10 from "./lessons/lesson10/Lesson10";
+// import Lesson11 from "./lessons/lesson11/Lesson11";
+import Lesson12 from "./lessons/lesson12/Lesson12";
 
 // hw
-//import HW8 from "./hw/hw8/hw8";
+// import HW8 from "./hw/hw8/hw8";
 // import HW9 from "./hw/hw9/HW9";
-import HW10 from "./hw/hw10/HW10";
+// import HW10 from "./hw/hw10/HW10";
 
 // consult
 
@@ -30,7 +32,10 @@ function App() {
       {/* <HW9/> */}
       {/* --Topic: useEffect, axios */}
       {/* <Lesson10 /> */}
-      <HW10/>
+      {/* <HW10/> */}
+      {/* <Lesson11 /> */}
+      {/* --Topic: formik, yup */}
+      <Lesson12 />
     </div>
   );
 }
