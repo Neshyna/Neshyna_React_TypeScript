@@ -32,15 +32,18 @@ export const Error = styled.div `
   `
 
 export const FactBlock = styled.div `
-width: 500px;
+width: 600px;
 display: flex;
-text-align: center;
+text-align: left;
 padding: 20px;
 background-color: aqua;
 border-radius: 5px;
+flex-direction: row;
+justify-content: space-between;
 `
 
 export const ButtonWrapper = styled.div`
   width: 700px;
   font-size: 25px;
 `;
+

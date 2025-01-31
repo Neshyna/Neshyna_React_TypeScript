@@ -7,7 +7,8 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson08 from "./lessons/lesson08/Lesson08";
 // import Lesson09 from "./lessons/lesson09/Lesson09";
 // import Lesson10 from "./lessons/lesson10/Lesson10";
-import Lesson11 from "./lessons/lesson11/Lesson11";
+// import Lesson11 from "./lessons/lesson11/Lesson11";
+import Lesson12 from "./lessons/lesson12/Lesson12";
 
 // hw
 // import HW8 from "./hw/hw8/hw8";
@@ -32,7 +33,9 @@ function App() {
       {/* --Topic: useEffect, axios */}
       {/* <Lesson10 /> */}
       {/* <HW10/> */}
-      <Lesson11 />
+      {/* <Lesson11 /> */}
+      {/* --Topic: formik, yup */}
+      <Lesson12 />
     </div>
   );
 }
