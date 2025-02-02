@@ -54,8 +54,8 @@ function EmployeeForm() {
       .typeError("Incorrect value"),
 
     jobTitle: Yup.string()
-    .max(30, "Max 80 symbols")
-    .typeError("Incorrect value"),
+      .max(30, "Max 80 symbols")
+      .typeError("Incorrect value"),
 
     usegeRules: Yup.boolean(),
   });
