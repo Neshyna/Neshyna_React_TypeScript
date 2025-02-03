@@ -1,35 +1,3 @@
-// Задание
-
-// Создайте компоент EmployeeForm, который должен содержать в себе форму
-// Контролировать форму нужно с помощью Formik
-// Валидацию формы необходимо сделать через Yup
-// Форма должна содержать следующие элементы:
-// "Full Name":
-// компонент Input;
-// обязательное поле;
-// тип данных: string;
-// минимальное количество символов - 5;
-// максимальное количество символов - 50
-// "Age":
-// компонент Input;
-// обязательное поле;
-// тип данных: number;
-// минимальное значение - 18; (метод для валидации min)
-// максимальное значение - 80; (метод для валидации max)
-// "Job Title":
-// компонент Input;
-// опциональное поле;
-// тип данных: string;
-// максимальное количество символов - 30;
-// "Create":
-// кнопка с типом Submit. При клике на нее необходимо вывести сообщение в консоль,
-// в котором будут перечислены все значения из полей
-
-// Задача со *
-// Добавить чекбокс "Правила использования":
-// checkbox(значение по умолчанию - false);
-// тип данных: boolean;
-
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -58,12 +26,13 @@ function EmployeeForm() {
       .typeError("Incorrect value"),
 
     usegeRules: Yup.boolean(),
+    // .oneOf([true], 'Accept agreement')
   });
 
   const formik = useFormik({
     initialValues: {
       fullName: "",
-      age: 0,
+      age: "",
       jobTitle: "",
       usageRules: false,
     } as EmployeeFormValues,
@@ -113,6 +82,14 @@ function EmployeeForm() {
           checked={formik.values.usageRules}
           onChange={formik.handleChange}
         ></Input>
+        {/*   <CheckboxContainer>
+        <Checkbox
+          type='checkbox'
+          id='agree_id'
+          name='agreement'
+          checked={formik.values.agreement}
+          onChange={formik.handleChange}
+        /> */}
       </InputsWrapper>
       <ButtonWrapper>
         <Button name="Create" type="submit"></Button>

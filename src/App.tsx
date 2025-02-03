@@ -1,5 +1,5 @@
-import "./App.css";
 import GlobalStyles from "./styles/GlobalStyles";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // lessons
 // import Lesson06 from './lessons/lesson06/lesson06';
@@ -9,18 +9,39 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson10 from "./lessons/lesson10/Lesson10";
 // import Lesson11 from "./lessons/lesson11/Lesson11";
 // import Lesson12 from "./lessons/lesson12/Lesson12";
+//---Lesson 13
+
+import Layout from "components/Layouts/Layouts";
+import Home from "pages/Home/Home";
+import About from "pages/About/About";
+import Users from "pages/Users/Users";
+import User from "pages/Users/components/User/User";
 
 // hw
 // import HW8 from "./hw/hw8/hw8";
 // import HW9 from "./hw/hw9/HW9";
 // import HW10 from "./hw/hw10/HW10";
-import HW12 from "./hw/hw12/HW12";
+// import HW12 from "./hw/hw12/HW12";
 
 // consult
 
 function App() {
   return (
-    <div className="app">
+    <BrowserRouter>
+      {/*   //BrowserRouter - компонент из react-router-dom, который позволяет нам работать с маршрутами
+    // по всему приложению */}
+      <GlobalStyles />
+      <Layout>
+        {/* Routes - собирает все маршруты приложения */}
+        <Routes>
+          {/* Route - компонент, в который передаётся маршрут и контент, 
+         который нужно отрисовать по этому маршруту в Layout */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/user" element={<User />} />
+        </Routes>
+      </Layout>
       {/* Topic: TypeScript - Introduction */}
       {/* <Lesson06/> */}
       {/* Topic: TypeScript - Object types, enum */}
@@ -37,8 +58,8 @@ function App() {
       {/* <Lesson11 /> */}
       {/* --Topic: formik, yup */}
       {/* <Lesson12 /> */}
-      <HW12/>
-    </div>
+      {/* <HW12/> */}
+    </BrowserRouter>
   );
 }
 export default App;

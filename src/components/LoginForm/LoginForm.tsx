@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 import Input from "../Input/Input";
 import { LoginFormContainer, Title, InputsContainer } from "./styles";
 import { LoginFormValues } from "./types";
+import { ChangeEvent } from "react";
 
 function LoginForm() {
   // const [email, setEmail] = useState<string>("");
@@ -26,21 +27,34 @@ function LoginForm() {
   //   console.log(password);
   // };
 
+  //минимум 8 символов, специальный символ и хотя бы одна заглавная буква
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
   //--- Создание валидационной схемы с помощью Yup
   const schema = Yup.object().shape({
     email: Yup.string()
-    .required("Field email is required")
-    .email('Field has type email')
-    .max(15,'Max 15 symbols')
-    .min(5, 'Min 5 symbols')
-    .typeError('Email must be string')
-    ,
+      .required("Field email is required")
+      .email("Field has type email")
+      .max(15, "Max 15 symbols")
+      .min(5, "Min 5 symbols")
+      .typeError("Email must be string"),
     password: Yup.number()
-    .required("Field password is required")
-    .typeError('Password must be number')
-    .test('Check min password length','Min 10 symbols',(value) => String(value).length >= 10)
-    .test('Check max password length','Max 20 symbols',(value) => String(value).length <= 20)
-    ,
+      .required("Field password is required")
+      .typeError("Password must be number")
+      .test(
+        "Check min password length",
+        "Min 10 symbols",
+        (value) => String(value).length >= 10
+      )
+      .test(
+        "Check max password length",
+        "Max 20 symbols",
+        (value) => String(value).length <= 20
+      ),
+    //   password: Yup.string()
+    //.required('Required')
+    //.matches(passwordRegex, 'Password must be at least 8 characters long, include uppercase, lowercase and special character')
   });
 
   //Настройка формы. useFormik, как аргумент принимает объект настройки, для определенной формы
@@ -55,13 +69,22 @@ function LoginForm() {
     } as LoginFormValues,
     //validationSchema - свойство,в знаение которого нужно передать схему для валидации
     validationSchema: schema,
-     // свойство validateOnChange по умолчанию true, значит валидация будет происходить при каждом изменении в форме
-     validateOnChange: false,
+    // свойство validateOnChange по умолчанию true, значит валидация будет происходить при каждом изменении в форме
+    validateOnChange: false,
     //onSubmit - функция, которая будет вызвана, когда произоёдет событие submit для формы
     onSubmit: (values: LoginFormValues) => {
       console.table(values);
     },
   });
+
+  console.log(formik);
+
+  // const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+  //   formik.setFieldValue('password', event.target.value)
+  //   formik.validateField('password')
+  // }
+
+
 
   return (
     // <LoginFormContainer onSubmit={onLogin}>
@@ -93,7 +116,7 @@ function LoginForm() {
           error={formik.errors.password}
         />
       </InputsContainer>
-      <Button type="submit" name="Login" onClick={()=>{}} />
+      <Button type="submit" name="Login" onClick={() => {}} />
     </LoginFormContainer>
   );
 }

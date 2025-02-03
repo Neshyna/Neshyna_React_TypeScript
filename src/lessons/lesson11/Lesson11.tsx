@@ -46,9 +46,11 @@ function Lesson11() {
     setIsDeleteButton(false);
   };
 
-  // const clickDeleteFact = () => {
-  //   setIsDeleteFact(false);
-  //     // };
+  // const deleteGroup = (id: number) => {
+  //   setCatFactsGroups((prevGroups) => prevGroups.filter(group => group.id !== id));
+  //need to save array of objects with key and fact
+  //so we create new array by filtering old array without selected element id
+
 
   const createFactBlocks = facts.map((fact) => (
     <FactBlock key={v4()}>

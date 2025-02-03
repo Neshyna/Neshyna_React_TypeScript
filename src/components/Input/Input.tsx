@@ -12,6 +12,7 @@ function Input({ name, type = 'text', placeholder, label, id, value, onChange,er
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        checked={false}
       />
       <ErrorMessage>{error}</ErrorMessage>
     </InputContainer>
