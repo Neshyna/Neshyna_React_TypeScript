@@ -115,7 +115,7 @@ function EmployeeForm() {
         ></Input>
       </InputsWrapper>
       <ButtonWrapper>
-        <Button name="Create" type="submit" onClick={() => {}}></Button>
+        <Button name="Create" type="submit"></Button>
       </ButtonWrapper>
     </EmployeeInfo>
   );
