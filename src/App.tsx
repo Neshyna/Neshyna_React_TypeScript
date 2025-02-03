@@ -10,12 +10,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Lesson11 from "./lessons/lesson11/Lesson11";
 // import Lesson12 from "./lessons/lesson12/Lesson12";
 //---Lesson 13
-
 import Layout from "components/Layouts/Layouts";
 import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Users from "pages/Users/Users";
 import User from "pages/Users/components/User/User";
+import Clients from "pages/Clients/Clients";
+import Google from "pages/Clients/Components/Google/Google";
+import Amazon from "pages/Clients/Components/Amazon/Amazon";
+import SpaceX from "pages/Clients/Components/SpaceX/SpaceX";
 
 // hw
 // import HW8 from "./hw/hw8/hw8";
@@ -40,6 +43,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/user" element={<User />} />
+          <Route path="/clients" element={<Clients/>}/>
+          <Route path="/clients/components/Amazon" element={<Amazon/>}/>
+          <Route path="/clients/components/Google" element={<Google/>}/>
+          <Route path="/clients/components/SpaceX" element={<SpaceX/>}/>
         </Routes>
       </Layout>
       {/* Topic: TypeScript - Introduction */}
