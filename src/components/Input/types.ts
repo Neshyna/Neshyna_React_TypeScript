@@ -2,7 +2,7 @@ import { ChangeEvent } from "react";
 
 export interface InputProps {
   name: string,
-  type?: 'text' | 'email' | 'password' | 'tel' | 'url' | 'number',
+  type?: 'text' | 'email' | 'password' | 'tel' | 'url' | 'number'|'checkbox',
   placeholder?: string,
   label?: string,
   id?: string,
