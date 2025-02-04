@@ -15,16 +15,16 @@ import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Users from "pages/Users/Users";
 import User from "pages/Users/components/User/User";
-import Clients from "pages/Clients/Clients";
-import Google from "pages/Clients/Components/Google/Google";
-import Amazon from "pages/Clients/Components/Amazon/Amazon";
-import SpaceX from "pages/Clients/Components/SpaceX/SpaceX";
 
 // hw
 // import HW8 from "./hw/hw8/hw8";
 // import HW9 from "./hw/hw9/HW9";
 // import HW10 from "./hw/hw10/HW10";
 // import HW12 from "./hw/hw12/HW12";
+import Clients from "pages/Clients/Clients";
+import Google from "pages/Clients/Components/Google/Google";
+import Amazon from "pages/Clients/Components/Amazon/Amazon";
+import SpaceX from "pages/Clients/Components/SpaceX/SpaceX";
 
 // consult
 
@@ -47,6 +47,9 @@ function App() {
           <Route path="/clients/components/Amazon" element={<Amazon/>}/>
           <Route path="/clients/components/Google" element={<Google/>}/>
           <Route path="/clients/components/SpaceX" element={<SpaceX/>}/>
+          <Route path='/lesson14' element={<Lesson14 />} />
+          {/* Route * - этот route показывает контент, если маршрута не существует в перечисленных выше */}
+          <Route path='*' element='Page not found' />
         </Routes>
       </Layout>
       {/* Topic: TypeScript - Introduction */}

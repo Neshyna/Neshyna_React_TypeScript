@@ -13,3 +13,9 @@ export const Title = styled.div`
  font-size: 36px;
  font-weight: bold;
 `
+
+// export const StyledLink = styled(Link)`
+//  text-decoration: none;
+//  font-weight: bold;
+//  color: burlywood;
+// `

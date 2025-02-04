@@ -6,9 +6,9 @@ function Clients() {
     <ClientsPage>
       <Title>Select client</Title>
 
-      <Link to="/clients/components/amazon">Amazon</Link>
-      <Link to="/clients/components/google">Google</Link>
-      <Link to="/clients/components/spacex">SpaceX</Link>
+      <Link to="amazon">Amazon</Link>
+      <Link to="google">Google</Link>
+      <Link to="spacex">SpaceX</Link>
       
     </ClientsPage>
 
