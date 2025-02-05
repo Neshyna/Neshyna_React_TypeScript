@@ -1,14 +1,17 @@
 // Компонент Message.tsx должен отображать
 // сообщение из стейта, которое вы кладете при клике на
 // кнопку "Post"
-import { MessageWrapper } from "./styles";
+import { MessageComponent, MessageWrapper } from "./styles";
 import Card from "../Card/Card";
-import MessageProps from "./types";
+import { useContext } from 'react';
+import { BlogManagementContext } from '../BlogManagement/BlogManagement';
 
-function Message({ text }: MessageProps) {
+
+function Message() {
+  const message = useContext(BlogManagementContext)
   return (
     <MessageWrapper>
-      <Card text={text} />
+       <MessageComponent>{message}</MessageComponent>
     </MessageWrapper>
   );
 }

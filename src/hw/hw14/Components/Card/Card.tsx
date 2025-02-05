@@ -5,17 +5,16 @@ import Message from "../Message/Message";
 import { useContext } from "react";
 import { BlogManagementContext } from "../BlogManagement/BlogManagement";
 import { CardWrapper, NameWrapper, FirstName, LastName } from "./styles";
-import { CardProps } from "./types";
 
-function Card({ text }: CardProps) {
-  const { data } = useContext(BlogManagementContext);
+function Card() {
+  const postedData = useContext(BlogManagementContext);
   return (
     <CardWrapper>
       <NameWrapper>
-        <FirstName>First Name: {data.firstName}</FirstName>
-        <LastName>Last Name: {data.lastName}</LastName>
+        <FirstName>First Name: Masha</FirstName>
+        <LastName>Last Name:Neshyna </LastName>
       </NameWrapper>
-      {text && <Message text={text} />}
+      <Message />
     </CardWrapper>
   );
 }

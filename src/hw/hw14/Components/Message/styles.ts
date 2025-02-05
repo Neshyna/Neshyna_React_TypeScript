@@ -9,3 +9,8 @@ export const MessageWrapper = styled.div`
   padding: 30px;
   background: #b9cecf;
 `;
+
+export const MessageComponent = styled.div`
+display: flex;
+flex-direction: column;
+`

@@ -9,7 +9,7 @@
 // а не ввели)
 // в этом компоненте вы должны вызвать компонент Card
 
-import { useState, createContext } from "react";
+import { useState, createContext, ChangeEvent } from "react";
 import Card from "../Card/Card";
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
@@ -20,16 +20,9 @@ import {
 } from "./styles";
 import { BlogManagementContextType, UserData } from "./types";
 
-export const BlogManagementContext = createContext<BlogManagementContextType>({
-  data: undefined,
-  onDataChange: () => {},
-});
+export const BlogManagementContext = createContext<string>("");
 
 function BlogManagement() {
-  const [userData, setUserData] = useState<UserData>({
-    firstName: "Masha",
-    lastName: "Neshyna",
-  });
   const [postedData, setPost] = useState<string>("");
   const [inputData, setInput] = useState<string>("");
 
@@ -38,16 +31,12 @@ function BlogManagement() {
     setInput("");
   };
 
-  const onChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(target.value);
+  const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
+    setInput(event.target.value);
   };
 
   return (
-    <BlogManagementContext.Provider
-      value={{
-        data: userData,
-      }}
-    >
+    <BlogManagementContext.Provider value={postedData}>
       <BlogManagementWrapper>
         <BlogMangementTitle>Blog Management</BlogMangementTitle>
         <Input
@@ -55,15 +44,13 @@ function BlogManagement() {
           placeholder="insert message"
           type="text"
           id="input"
-          onChange={onChange}
+          onChange={onChangeInput}
           value={inputData}
         ></Input>
         <ButtonWrapper>
-          <Button name="POST" onClick={addPost}></Button>
+          <Button name="POST" type="button" onClick={addPost}></Button>
         </ButtonWrapper>
-        {postedData && userData && (
-          <Card cardData={userData} text={postedData} />
-        )}
+        <Card />
       </BlogManagementWrapper>
     </BlogManagementContext.Provider>
   );
