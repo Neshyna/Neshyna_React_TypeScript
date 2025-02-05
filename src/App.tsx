@@ -15,16 +15,19 @@ import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Users from "pages/Users/Users";
 import User from "pages/Users/components/User/User";
+// import Lesson14 from "./lessons/Lesson14/Lesson14";
+
 
 // hw
 // import HW8 from "./hw/hw8/hw8";
 // import HW9 from "./hw/hw9/HW9";
 // import HW10 from "./hw/hw10/HW10";
 // import HW12 from "./hw/hw12/HW12";
-import Clients from "pages/Clients/Clients";
-import Google from "pages/Clients/Components/Google/Google";
-import Amazon from "pages/Clients/Components/Amazon/Amazon";
-import SpaceX from "pages/Clients/Components/SpaceX/SpaceX";
+// import Clients from "pages/Clients/Clients";
+// import Google from "pages/Clients/Components/Google/Google";
+// import Amazon from "pages/Clients/Components/Amazon/Amazon";
+// import SpaceX from "pages/Clients/Components/SpaceX/SpaceX";
+import HW14 from './hw/hw14/HW14';
 
 // consult
 
@@ -43,11 +46,12 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/user" element={<User />} />
-          <Route path="/clients" element={<Clients/>}/>
+          {/* <Route path="/clients" element={<Clients/>}/>
           <Route path="/clients/components/Amazon" element={<Amazon/>}/>
           <Route path="/clients/components/Google" element={<Google/>}/>
-          <Route path="/clients/components/SpaceX" element={<SpaceX/>}/>
-          <Route path='/lesson14' element={<Lesson14 />} />
+          <Route path="/clients/components/SpaceX" element={<SpaceX/>}/> */}
+          {/* <Route path='/lesson14' element={<Lesson14 />} /> */}
+          <Route path='/HW14' element={<HW14/>}/>
           {/* Route * - этот route показывает контент, если маршрута не существует в перечисленных выше */}
           <Route path='*' element='Page not found' />
         </Routes>
@@ -70,6 +74,7 @@ function App() {
       {/* <Lesson12 /> */}
       {/* <HW12/> */}
     </BrowserRouter>
+    
   );
 }
 export default App;

@@ -1,4 +1,5 @@
 import { LayoutProps } from "./types";
+import { Link } from "react-router-dom";
 
 import {
   LayoutComponent,
@@ -8,6 +9,7 @@ import {
   Main,
   Footer,
   StyledNavLink,
+  
 } from "./styles";
 import { useNavigate } from "react-router-dom";
 
@@ -57,6 +59,13 @@ function Layout({ children }: LayoutProps) {
               ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
             }>
             Lesson 14
+          </StyledNavLink>
+          <StyledNavLink
+            to='/HW14'
+            style={
+              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
+            }>
+            HW14
           </StyledNavLink>
         </NavContainer>
       </Header>

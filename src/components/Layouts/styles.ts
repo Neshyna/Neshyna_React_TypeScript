@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const LayoutComponent = styled.div`
  display: flex;

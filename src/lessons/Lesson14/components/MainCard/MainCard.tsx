@@ -12,9 +12,6 @@ export const MainCardContext = createContext<MainCardContextType>({
   onDataChange: () => { }
 })
 
-
-
-
 function MainCard() {
   const [userData, setUserData] = useState<UserData|undefined>({
     firstName: 'Bart',
