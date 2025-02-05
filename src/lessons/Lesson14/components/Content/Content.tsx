@@ -7,8 +7,10 @@ import { MainCardContext } from "../MainCard/MainCard"
 import Button from 'components/Button/Button';
 
 function Content() {
-  // 3 шаг. Вызываем хук useContext, в который мы передаём контекст, который был создан на 1-м шаге
-  // При вызове хука useContext он вернёт те данные, которые были переданы в value провайдера на 2-м шаге
+  // 3 шаг. Вызываем хук useContext, в который мы передаём контекст, 
+  // который был создан на 1-м шаге
+  // При вызове хука useContext он вернёт те данные, 
+  // которые были переданы в value провайдера на 2-м шаге
   // Сохраняем значение в отдельную переменную
   // const userContentData = useContext(MainCardContext);
   const { data, onDataChange } = useContext(MainCardContext)
