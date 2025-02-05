@@ -46,24 +46,24 @@ function BlogManagement() {
     <BlogManagementContext.Provider
       value={{
         data: userData,
-       
       }}
     >
       <BlogManagementWrapper>
         <BlogMangementTitle>Blog Management</BlogMangementTitle>
         <Input
           name="input"
-          label="insert message"
           placeholder="insert message"
           type="text"
           id="input"
-          onChange={addPost}
+          onChange={onChange}
           value={inputData}
         ></Input>
         <ButtonWrapper>
           <Button name="POST" onClick={addPost}></Button>
         </ButtonWrapper>
-        {postedData && <Card text={postedData} />}
+        {postedData && userData && (
+          <Card cardData={userData} text={postedData} />
+        )}
       </BlogManagementWrapper>
     </BlogManagementContext.Provider>
   );
